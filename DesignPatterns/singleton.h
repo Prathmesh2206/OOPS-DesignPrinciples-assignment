@@ -12,6 +12,7 @@ class Singleton{
     public:
             //deleted copy constructor so no copy can be made out of the given instance
             Singleton (const Singleton& obj)=delete;
+            void operator=(const Singleton& obj)=delete;
             static Singleton* getInstance(){
                 return instancePtr;
             }
