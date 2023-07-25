@@ -1,6 +1,8 @@
 #include<bits/stdc++.h>
 #include"singleton.h"
 #include"factory.h"
+#include"facade.h"
+
 
 using namespace std;
 
@@ -27,6 +29,12 @@ int main(){
     cout<<endl<<endl<<endl<<endl<<endl;
 
     cout<<"Example of Facade Pattern:-"<<endl;
+    Facade facade;
+    facade.MethodA();
+    facade.MethodB();
+    cout<<endl<<endl<<endl<<endl<<endl;
+    
+
 
 
     return 0;
