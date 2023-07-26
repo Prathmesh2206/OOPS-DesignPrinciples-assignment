@@ -54,18 +54,18 @@ int main(){
     cout<<"Example of Abstract Factory Pattern:-"<<endl;
     GUIFactory *guiFactory;
     Button *btn;
-    ScrollBar *sb;
+    Textbox *sb;
 
     guiFactory = new MacFactory;
     btn = guiFactory->createButton();
     btn->paint();
-    sb = guiFactory->createScrollBar();
+    sb = guiFactory->createTextbox();
     sb->paint();
 
     guiFactory = new WindowsFactory;
     btn = guiFactory->createButton();
     btn->paint();
-    sb = guiFactory->createScrollBar();
+    sb = guiFactory->createTextbox();
     sb->paint();
   
     cout<<endl<<endl<<endl<<endl<<endl;

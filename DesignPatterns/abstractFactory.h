@@ -25,27 +25,27 @@ public:
     }
 };
 
-class ScrollBar
+class Textbox
 {
 public:
     virtual void paint() = 0;
 };
 
-class WindowsScrollBar : public ScrollBar
+class WindowsTextbox : public Textbox
 {
 public:
     void paint()
     {
-        cout << "Windows ScrollBar" << endl;
+        cout << "Windows Textbox" << endl;
     }
 };
 
-class MacScrollBar : public ScrollBar
+class MacTextbox : public Textbox
 {
 public:
     void paint()
     {
-        cout << "MacOS ScrollBar" << endl;
+        cout << "MacOS Textbox" << endl;
     }
 };
 
@@ -53,7 +53,7 @@ class GUIFactory
 {
 public:
     virtual Button *createButton() = 0;
-    virtual ScrollBar *createScrollBar() = 0;
+    virtual Textbox *createTextbox() = 0;
 };
 
 class WindowsFactory : public GUIFactory
@@ -63,9 +63,9 @@ public:
     {
         return new WindowsButton;
     }
-    ScrollBar *createScrollBar()
+    Textbox *createTextbox()
     {
-        return new WindowsScrollBar;
+        return new WindowsTextbox;
     }
 };
 
@@ -76,8 +76,8 @@ public:
     {
         return new MacButton;
     }
-    ScrollBar *createScrollBar()
+    Textbox *createTextbox()
     {
-        return new MacScrollBar;
+        return new MacTextbox;
     }
 };
