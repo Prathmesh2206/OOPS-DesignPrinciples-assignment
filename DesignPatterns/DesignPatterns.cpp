@@ -2,6 +2,8 @@
 #include"singleton.h"
 #include"factory.h"
 #include"facade.h"
+#include"strategy.h"
+#include"abstractFactory.h"
 
 
 using namespace std;
@@ -36,6 +38,38 @@ int main(){
     
 
 
+
+    cout<<"Example of Strategy Pattern:-"<<endl;
+    Strategy str;
+    Travel* trvl=str.SendIt(1);
+    trvl->transport();
+    trvl=str.SendIt(2);
+    trvl->transport();
+    trvl=str.SendIt(3);
+    trvl->transport();   
+    cout<<endl<<endl<<endl<<endl<<endl;
+    
+
+
+    cout<<"Example of Abstract Factory Pattern:-"<<endl;
+    GUIFactory *guiFactory;
+    Button *btn;
+    ScrollBar *sb;
+
+    guiFactory = new MacFactory;
+    btn = guiFactory->createButton();
+    btn->paint();
+    sb = guiFactory->createScrollBar();
+    sb->paint();
+
+    guiFactory = new WindowsFactory;
+    btn = guiFactory->createButton();
+    btn->paint();
+    sb = guiFactory->createScrollBar();
+    sb->paint();
+  
+    cout<<endl<<endl<<endl<<endl<<endl;
+    
 
     return 0;
 }
